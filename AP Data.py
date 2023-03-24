@@ -55,6 +55,7 @@ class movement:
         elif ice == 4:
             ice = "mint"
         self.ice = ice
+        self.id = id
     
     def __str__(self):
         self = [self.id, self.grade, self.pet, self.sib, self.ice]
