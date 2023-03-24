@@ -11,8 +11,10 @@ def basic_data():
 4: Icecream""")
     print("-----------------------------------------------------------------------------------------------------------------------------------")
 
-    cats = input("Please enter the coresponding number to you would like to learn more about separated by a space: ")
+    cats = input("Please enter the coresponding number to the category you would like to learn more about separated by a space: ")
     cats = list(map(int,cats.strip().split()))
+    if len(cats) == 1:
+        print("that is too many")
     # make sure its just one, get data, display good
 
 # To compare data from different catagories
@@ -27,7 +29,7 @@ def compare_data():
 
     cats = input("Please enter the coresponding numbers of the 2 catagories you would like to compare separated by a space: ")
     cats = list(map(int,cats.strip().split()))
-    # make sure tis just two, get data, display good
+    # make sure its just two, get data, display good
 
 # Graph data
 def graph_data():
@@ -39,7 +41,7 @@ def graph_data():
 4: Icecream""")
     print("-----------------------------------------------------------------------------------------------------------------------------------")
 
-    cats = input("Please enter the coresponding number of the catagor you would like to graph separated by a space: ")
+    cats = input("Please enter the coresponding number of the catagory you would like to graph separated by a space: ")
     # make sure its just one, get data, display good
 
 # End of graph_data func
