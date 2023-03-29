@@ -42,7 +42,8 @@ def basic_data():
                     eleventh += 1
                 elif x[0] == "12th":
                     twelfth += 1
-            print(f"""Out of all the students
+            number = fifth+sixth+seventh+eighth+ninth+tenth+eleventh+twelfth
+            print(f"""Out of all {number} students
     {fifth} are in 5th grade
     {sixth} are in 6th
     {seventh} are in 7th grade
@@ -68,7 +69,8 @@ def basic_data():
                     fish += 1
                 elif x[0] == "reptile":
                     reptile += 1
-            print(f"""Out of all the students
+            number = dog+cat+fish+reptile
+            print(f"""Out of all {number} students
     {dog} own dogs
     {cat} own cats
     {fish} own fish
@@ -93,7 +95,8 @@ def basic_data():
                     three +=1 
                 elif x[0] == 4:
                     four += 1
-            print(f"""Out of all the students
+            number = zero+one+two+three+four
+            print(f"""Out of all {number} students
     {zero} have no siblings
     {one} have one sibling
     {two} have two siblings
@@ -116,7 +119,8 @@ def basic_data():
                     straw += 1
                 elif x[0] == "mint":
                     mint += 1
-            print(f"""Out of all the students
+            number = cho+van+straw+mint
+            print(f"""Out of all {number} students
     {cho} like chocolate ice cream
     {van} like vanilla ice cream
     {straw} like strawberry ice cream
@@ -134,6 +138,10 @@ def compare_data():
 
     cats = input("Please enter the coresponding numbers of the 2 catagories you would like to compare separated by a space: ")
     cats = list(map(int,cats.strip().split()))
+    catone = cats[0]
+    cattwo = cats[1]
+    
+
     # make sure its just two, get data, display good
 
 # Graph data
