@@ -1,7 +1,7 @@
 import sqlib
 con = sqlib.create_db_connection("127.0.0.1","alischer","alischer1","in_class_demo")
 
-# Gets All Possible Answers From Catagory(ies) and Gives How Many People Chose What
+# Gets All Possible Answers From Catagory and Gives How Many People Chose What
 def basic_data():
     print("-----------------------------------------------------------------------------------------------------------------------------------")
     print("""Questions posed to the students are under 4 main categories:
@@ -139,7 +139,32 @@ def compare_data():
     cats = list(map(int,cats.strip().split()))
     catone = cats[0]
     cattwo = cats[1]
+    rowone = ""
+    rowtwo = ""
+    if catone == "1":
+        rowone = "grade"
+    elif catone == "2":
+        rowone = "pet"
+    elif catone == "3":
+        rowone = "sib"
+    elif catone == "4":
+        rowone = "ice"
     
+    if cattwo == "1":
+        rowtwo = "grade"
+    elif cattwo == "2":
+        rowtwo = "pet"
+    elif cattwo == "3":
+        rowotwo = "sib"
+    elif cattwo == "4":
+        rowtwo = "ice"
+    
+    search_var_one =(f"""select {rowone} from annie_ap;""")
+    search_read_one = sqlib.read_query(con,search_var_one)
+    search_var_two = (f"""select {rowtwo} from annie_ap;""")
+    search_read_two = sqlib.read_query(con,search_var_two)
+
+
 
     # make sure its just two, get data, display good
 
