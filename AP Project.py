@@ -164,7 +164,8 @@ def compare_data():
     search_var_two = (f"""select {rowtwo} from annie_ap;""")
     search_read_two = sqlib.read_query(con,search_var_two)
 
-    
+    # the first option of rowone compared to each option in rowtwo
+    # wait, just copy+paste the code for each of the basic data obtaining code for each cat then do above
 
     # make sure its just two, get data, display good
 
