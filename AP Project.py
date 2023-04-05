@@ -141,30 +141,30 @@ def compare_data():
     cattwo = cats[1]
     rowone = ""
     rowtwo = ""
-    if catone == "1":
+    if catone == 1:
         rowone = "grade"
-    elif catone == "2":
+    elif catone == 2:
         rowone = "pet"
-    elif catone == "3":
+    elif catone == 3:
         rowone = "sib"
-    elif catone == "4":
+    elif catone == 4:
         rowone = "ice"
     
-    if cattwo == "1":
+    if cattwo == 1:
         rowtwo = "grade"
-    elif cattwo == "2":
+    elif cattwo == 2:
         rowtwo = "pet"
-    elif cattwo == "3":
-        rowotwo = "sib"
-    elif cattwo == "4":
+    elif cattwo == 3:
+        rowtwo = "sib"
+    elif cattwo == 4:
         rowtwo = "ice"
-    
+
     search_var_one =(f"""select {rowone} from annie_ap;""")
     search_read_one = sqlib.read_query(con,search_var_one)
     search_var_two = (f"""select {rowtwo} from annie_ap;""")
     search_read_two = sqlib.read_query(con,search_var_two)
 
-
+    
 
     # make sure its just two, get data, display good
 
@@ -192,14 +192,14 @@ print("""There are 3 ways in which you can choose to display the data:
       
 choice = int(input("Enter the coresponding number of the method you would like to use: "))
 
-try:
-    if choice == 1:
-        basic_data()
-    elif choice == 2:
-        compare_data()
-    elif choice == 3:
-        graph_data()
-    else:
-        print("something went wrong")
-except:
+# try:
+if choice == 1:
+    basic_data()
+elif choice == 2:
+    compare_data()
+elif choice == 3:
+    graph_data()
+else:
     print("something went wrong")
+# except:
+#     print("something went wrong")
