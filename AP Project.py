@@ -164,6 +164,150 @@ def compare_data():
     search_var_two = (f"""select {rowtwo} from annie_ap;""")
     search_read_two = sqlib.read_query(con,search_var_two)
 
+    if rowone == "grade":
+        fifth = 0
+        sixth = 0
+        seventh = 0
+        eighth = 0
+        ninth = 0
+        tenth = 0
+        eleventh = 0
+        twelfth = 0
+        for x in search_read_one:
+            if x[0] == "5th":
+                fifth += 1
+            elif x[0] == "6th":
+                sixth += 1
+            elif x[0] == "7th":
+                seventh += 1
+            elif x[0] == "8th":
+                eighth +=1
+            elif x[0] == "9th":
+                ninth += 1
+            elif x[0] == "10th":
+                tenth += 1
+            elif x[0] == "11th":
+                eleventh += 1
+            elif x[0] == "12th":
+                twelfth += 1
+    elif rowone == "pet":
+        dog = 0
+        cat = 0
+        fish = 0
+        reptile = 0
+        for x in search_read_one:
+            if x[0] == "dog":
+                dog += 1
+            elif x[0] == "cat":
+                cat += 1
+            elif x[0] == "fish":
+                fish += 1
+            elif x[0] == "reptile":
+                reptile += 1
+    elif rowone == "sib":
+        zero = 0
+        one = 0
+        two = 0
+        three = 0
+        four = 0
+        for x in search_read_one:
+            if x[0] == 0:
+                zero += 1
+            elif x[0] == 1:
+                one += 1
+            elif x[0] == 2:
+                two += 1
+            elif x[0] == 3:
+                three +=1 
+            elif x[0] == 4:
+                four += 1
+    elif rowone == "ice":
+        cho = 0
+        van = 0
+        straw = 0
+        mint = 0
+        for x in search_read_one:
+            if x[0] == "chocolate":
+                cho += 1
+            elif x[0] == "vanilla":
+                van += 1
+            elif x[0] == "strawberry":
+                straw += 1
+            elif x[0] == "mint":
+                mint += 1
+
+    if rowtwo == "grade":
+        fifth = 0
+        sixth = 0
+        seventh = 0
+        eighth = 0
+        ninth = 0
+        tenth = 0
+        eleventh = 0
+        twelfth = 0
+        for x in search_read_two:
+            if x[0] == "5th":
+                fifth += 1
+            elif x[0] == "6th":
+                sixth += 1
+            elif x[0] == "7th":
+                seventh += 1
+            elif x[0] == "8th":
+                eighth +=1
+            elif x[0] == "9th":
+                ninth += 1
+            elif x[0] == "10th":
+                tenth += 1
+            elif x[0] == "11th":
+                eleventh += 1
+            elif x[0] == "12th":
+                twelfth += 1
+    elif rowtwo == "pet":
+        dog = 0
+        cat = 0
+        fish = 0
+        reptile = 0
+        for x in search_read_two:
+            if x[0] == "dog":
+                dog += 1
+            elif x[0] == "cat":
+                cat += 1
+            elif x[0] == "fish":
+                fish += 1
+            elif x[0] == "reptile":
+                reptile += 1
+    elif rowtwo == "sib":
+        zero = 0
+        one = 0
+        two = 0
+        three = 0
+        four = 0
+        for x in search_read_two:
+            if x[0] == 0:
+                zero += 1
+            elif x[0] == 1:
+                one += 1
+            elif x[0] == 2:
+                two += 1
+            elif x[0] == 3:
+                three +=1 
+            elif x[0] == 4:
+                four += 1
+    elif rowtwo == "ice":
+        cho = 0
+        van = 0
+        straw = 0
+        mint = 0
+        for x in search_read_two:
+            if x[0] == "chocolate":
+                cho += 1
+            elif x[0] == "vanilla":
+                van += 1
+            elif x[0] == "strawberry":
+                straw += 1
+            elif x[0] == "mint":
+                mint += 1
+
     # the first option of rowone compared to each option in rowtwo
     # wait, just copy+paste the code for each of the basic data obtaining code for each cat then do above
 
