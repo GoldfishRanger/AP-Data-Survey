@@ -164,6 +164,7 @@ def compare_data():
     search_var_two = (f"""select {rowtwo} from annie_ap;""")
     search_read_two = sqlib.read_query(con,search_var_two)
 
+
     if rowone == "grade":
         fifth = 0
         sixth = 0
@@ -190,6 +191,7 @@ def compare_data():
                 eleventh += 1
             elif x[0] == "12th":
                 twelfth += 1
+        rowone_list = [fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth]
     elif rowone == "pet":
         dog = 0
         cat = 0
@@ -204,6 +206,7 @@ def compare_data():
                 fish += 1
             elif x[0] == "reptile":
                 reptile += 1
+        rowone_list = [dog,cat,fish,reptile]
     elif rowone == "sib":
         zero = 0
         one = 0
@@ -221,6 +224,7 @@ def compare_data():
                 three +=1 
             elif x[0] == 4:
                 four += 1
+        rowone_list = [zero,one,two,three,four]
     elif rowone == "ice":
         cho = 0
         van = 0
@@ -235,6 +239,7 @@ def compare_data():
                 straw += 1
             elif x[0] == "mint":
                 mint += 1
+        rowone_list = [cho,van,straw,mint]
 
     if rowtwo == "grade":
         fifth = 0
@@ -262,6 +267,7 @@ def compare_data():
                 eleventh += 1
             elif x[0] == "12th":
                 twelfth += 1
+        rowtwo_list = [fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth]
     elif rowtwo == "pet":
         dog = 0
         cat = 0
@@ -276,6 +282,7 @@ def compare_data():
                 fish += 1
             elif x[0] == "reptile":
                 reptile += 1
+        rowtwo_list = [dog,cat,fish,reptile]
     elif rowtwo == "sib":
         zero = 0
         one = 0
@@ -293,6 +300,7 @@ def compare_data():
                 three +=1 
             elif x[0] == 4:
                 four += 1
+        rowtwo_list = [zero,one,two,three,four]
     elif rowtwo == "ice":
         cho = 0
         van = 0
@@ -307,6 +315,10 @@ def compare_data():
                 straw += 1
             elif x[0] == "mint":
                 mint += 1
+        rowtwo_list = [cho,van,straw,mint]
+
+    print(rowone_list)
+    print(rowtwo_list)
 
     # the first option of rowone compared to each option in rowtwo
     # wait, just copy+paste the code for each of the basic data obtaining code for each cat then do above
