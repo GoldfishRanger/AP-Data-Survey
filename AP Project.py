@@ -159,169 +159,191 @@ def compare_data():
     elif cattwo == 4:
         rowtwo = "ice"
 
-    search_var_one =(f"""select {rowone} from annie_ap;""")
-    search_read_one = sqlib.read_query(con,search_var_one)
-    search_var_two = (f"""select {rowtwo} from annie_ap;""")
-    search_read_two = sqlib.read_query(con,search_var_two)
-
+    grades = ["5th","6th","7th","8th","9th","10th","11th","12th"]
+    pets = ["dog","cat","fish","reptile"]
+    sibs = ["0","1","2","3","4"]
+    ices = ["chocolate","vanilla","strawberry","mint"]
 
     if rowone == "grade":
-        fifth = 0
-        sixth = 0
-        seventh = 0
-        eighth = 0
-        ninth = 0
-        tenth = 0
-        eleventh = 0
-        twelfth = 0
-        for x in search_read_one:
-            if x[0] == "5th":
-                fifth += 1
-            elif x[0] == "6th":
-                sixth += 1
-            elif x[0] == "7th":
-                seventh += 1
-            elif x[0] == "8th":
-                eighth +=1
-            elif x[0] == "9th":
-                ninth += 1
-            elif x[0] == "10th":
-                tenth += 1
-            elif x[0] == "11th":
-                eleventh += 1
-            elif x[0] == "12th":
-                twelfth += 1
-        rowone_list = [fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth]
+        for x in grades:
+            search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
+            search_read = sqlib.read_query(con,search_var)
+            print(search_read)
     elif rowone == "pet":
-        dog = 0
-        cat = 0
-        fish = 0
-        reptile = 0
-        for x in search_read_one:
-            if x[0] == "dog":
-                dog += 1
-            elif x[0] == "cat":
-                cat += 1
-            elif x[0] == "fish":
-                fish += 1
-            elif x[0] == "reptile":
-                reptile += 1
-        rowone_list = [dog,cat,fish,reptile]
+        for x in pets:
+            search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
+            search_read = sqlib.read_query(con,search_var)
+            print(search_read)
     elif rowone == "sib":
-        zero = 0
-        one = 0
-        two = 0
-        three = 0
-        four = 0
-        for x in search_read_one:
-            if x[0] == 0:
-                zero += 1
-            elif x[0] == 1:
-                one += 1
-            elif x[0] == 2:
-                two += 1
-            elif x[0] == 3:
-                three +=1 
-            elif x[0] == 4:
-                four += 1
-        rowone_list = [zero,one,two,three,four]
+        for x in sibs:
+            search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
+            search_read = sqlib.read_query(con,search_var)
+            print(search_read)
     elif rowone == "ice":
-        cho = 0
-        van = 0
-        straw = 0
-        mint = 0
-        for x in search_read_one:
-            if x[0] == "chocolate":
-                cho += 1
-            elif x[0] == "vanilla":
-                van += 1
-            elif x[0] == "strawberry":
-                straw += 1
-            elif x[0] == "mint":
-                mint += 1
-        rowone_list = [cho,van,straw,mint]
-
-    if rowtwo == "grade":
-        fifth = 0
-        sixth = 0
-        seventh = 0
-        eighth = 0
-        ninth = 0
-        tenth = 0
-        eleventh = 0
-        twelfth = 0
-        for x in search_read_two:
-            if x[0] == "5th":
-                fifth += 1
-            elif x[0] == "6th":
-                sixth += 1
-            elif x[0] == "7th":
-                seventh += 1
-            elif x[0] == "8th":
-                eighth +=1
-            elif x[0] == "9th":
-                ninth += 1
-            elif x[0] == "10th":
-                tenth += 1
-            elif x[0] == "11th":
-                eleventh += 1
-            elif x[0] == "12th":
-                twelfth += 1
-        rowtwo_list = [fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth]
-    elif rowtwo == "pet":
-        dog = 0
-        cat = 0
-        fish = 0
-        reptile = 0
-        for x in search_read_two:
-            if x[0] == "dog":
-                dog += 1
-            elif x[0] == "cat":
-                cat += 1
-            elif x[0] == "fish":
-                fish += 1
-            elif x[0] == "reptile":
-                reptile += 1
-        rowtwo_list = [dog,cat,fish,reptile]
-    elif rowtwo == "sib":
-        zero = 0
-        one = 0
-        two = 0
-        three = 0
-        four = 0
-        for x in search_read_two:
-            if x[0] == 0:
-                zero += 1
-            elif x[0] == 1:
-                one += 1
-            elif x[0] == 2:
-                two += 1
-            elif x[0] == 3:
-                three +=1 
-            elif x[0] == 4:
-                four += 1
-        rowtwo_list = [zero,one,two,three,four]
-    elif rowtwo == "ice":
-        cho = 0
-        van = 0
-        straw = 0
-        mint = 0
-        for x in search_read_two:
-            if x[0] == "chocolate":
-                cho += 1
-            elif x[0] == "vanilla":
-                van += 1
-            elif x[0] == "strawberry":
-                straw += 1
-            elif x[0] == "mint":
-                mint += 1
-        rowtwo_list = [cho,van,straw,mint]
-
-    print(rowone_list)
-    print(rowtwo_list)
-
+        for x in ices:
+            search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
+            search_read = sqlib.read_query(con,search_var)
+            print(search_read)
+    
+    # figure out how to do below, and like display it afterwards
     # the first option of rowone compared to each option in rowtwo
-    # wait, just copy+paste the code for each of the basic data obtaining code for each cat then do above
+
+    # if rowone == "grade":
+    #     fifth = 0
+    #     sixth = 0
+    #     seventh = 0
+    #     eighth = 0
+    #     ninth = 0
+    #     tenth = 0
+    #     eleventh = 0
+    #     twelfth = 0
+    #     for x in search_read_one:
+    #         if x[0] == "5th":
+    #             fifth += 1
+    #         elif x[0] == "6th":
+    #             sixth += 1
+    #         elif x[0] == "7th":
+    #             seventh += 1
+    #         elif x[0] == "8th":
+    #             eighth +=1
+    #         elif x[0] == "9th":
+    #             ninth += 1
+    #         elif x[0] == "10th":
+    #             tenth += 1
+    #         elif x[0] == "11th":
+    #             eleventh += 1
+    #         elif x[0] == "12th":
+    #             twelfth += 1
+    #     rowone_list = [fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth]
+    # elif rowone == "pet":
+    #     dog = 0
+    #     cat = 0
+    #     fish = 0
+    #     reptile = 0
+    #     for x in search_read_one:
+    #         if x[0] == "dog":
+    #             dog += 1
+    #         elif x[0] == "cat":
+    #             cat += 1
+    #         elif x[0] == "fish":
+    #             fish += 1
+    #         elif x[0] == "reptile":
+    #             reptile += 1
+    #     rowone_list = [dog,cat,fish,reptile]
+    # elif rowone == "sib":
+    #     zero = 0
+    #     one = 0
+    #     two = 0
+    #     three = 0
+    #     four = 0
+    #     for x in search_read_one:
+    #         if x[0] == 0:
+    #             zero += 1
+    #         elif x[0] == 1:
+    #             one += 1
+    #         elif x[0] == 2:
+    #             two += 1
+    #         elif x[0] == 3:
+    #             three +=1 
+    #         elif x[0] == 4:
+    #             four += 1
+    #     rowone_list = [zero,one,two,three,four]
+    # elif rowone == "ice":
+    #     cho = 0
+    #     van = 0
+    #     straw = 0
+    #     mint = 0
+    #     for x in search_read_one:
+    #         if x[0] == "chocolate":
+    #             cho += 1
+    #         elif x[0] == "vanilla":
+    #             van += 1
+    #         elif x[0] == "strawberry":
+    #             straw += 1
+    #         elif x[0] == "mint":
+    #             mint += 1
+    #     rowone_list = [cho,van,straw,mint]
+
+    # if rowtwo == "grade":
+    #     fifth = 0
+    #     sixth = 0
+    #     seventh = 0
+    #     eighth = 0
+    #     ninth = 0
+    #     tenth = 0
+    #     eleventh = 0
+    #     twelfth = 0
+    #     for x in search_read_two:
+    #         if x[0] == "5th":
+    #             fifth += 1
+    #         elif x[0] == "6th":
+    #             sixth += 1
+    #         elif x[0] == "7th":
+    #             seventh += 1
+    #         elif x[0] == "8th":
+    #             eighth +=1
+    #         elif x[0] == "9th":
+    #             ninth += 1
+    #         elif x[0] == "10th":
+    #             tenth += 1
+    #         elif x[0] == "11th":
+    #             eleventh += 1
+    #         elif x[0] == "12th":
+    #             twelfth += 1
+    #     rowtwo_list = [fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth]
+    # elif rowtwo == "pet":
+    #     dog = 0
+    #     cat = 0
+    #     fish = 0
+    #     reptile = 0
+    #     for x in search_read_two:
+    #         if x[0] == "dog":
+    #             dog += 1
+    #         elif x[0] == "cat":
+    #             cat += 1
+    #         elif x[0] == "fish":
+    #             fish += 1
+    #         elif x[0] == "reptile":
+    #             reptile += 1
+    #     rowtwo_list = [dog,cat,fish,reptile]
+    # elif rowtwo == "sib":
+    #     zero = 0
+    #     one = 0
+    #     two = 0
+    #     three = 0
+    #     four = 0
+    #     for x in search_read_two:
+    #         if x[0] == 0:
+    #             zero += 1
+    #         elif x[0] == 1:
+    #             one += 1
+    #         elif x[0] == 2:
+    #             two += 1
+    #         elif x[0] == 3:
+    #             three +=1 
+    #         elif x[0] == 4:
+    #             four += 1
+    #     rowtwo_list = [zero,one,two,three,four]
+    # elif rowtwo == "ice":
+    #     cho = 0
+    #     van = 0
+    #     straw = 0
+    #     mint = 0
+    #     for x in search_read_two:
+    #         if x[0] == "chocolate":
+    #             cho += 1
+    #         elif x[0] == "vanilla":
+    #             van += 1
+    #         elif x[0] == "strawberry":
+    #             straw += 1
+    #         elif x[0] == "mint":
+    #             mint += 1
+    #     rowtwo_list = [cho,van,straw,mint]
+
+    # number = 0
+    # for x in rowone_list:
+    #     number += x
+    # print(number)
 
     # make sure its just two, get data, display good
 
