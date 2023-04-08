@@ -163,37 +163,139 @@ def compare_data():
     pets = ["dog","cat","fish","reptile"]
     sibs = ["0","1","2","3","4"]
     ices = ["chocolate","vanilla","strawberry","mint"]
-
     list_thing = []
 
     if rowone == "grade":
         for x in grades:
-            print(x)
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
             list_thing.append(search_read)
+        if rowtwo == "grade":
+            for x in list_thing:
+                print("double")
+        elif rowtwo == "pet":
+            grade_set = 0
+            for x in list_thing:
+                dog = 0
+                cat = 0
+                fish = 0
+                reptile = 0
+                for y in x:
+                    if y[0] == "dog":
+                        dog += 1
+                    elif y[0] == "cat":
+                        cat += 1
+                    elif y[0] == "fish":
+                        fish += 1
+                    elif y[0] == "reptile":
+                        reptile += 1
+                print(f"""
+Of all the students in {grades[grade_set]} grade:
+{dog} have dogs
+{cat} have cats
+{fish} have fish
+and {reptile} have reptiles""")
+                grade_set += 1
+        elif rowtwo == "sib":
+            for x in list_thing:
+                print("thing list")
+        elif rowtwo == "ice":
+            for x in list_thing:
+                print("thing list")
+
     elif rowone == "pet":
         for x in pets:
-            print(x)
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
             list_thing.append(search_read)
+        if rowtwo == "grade":
+            print("thing list")
+
+        elif rowtwo == "pet":
+            print("double")
+
+        elif rowtwo == "sib":
+            print("thing list")
+
+        elif rowtwo == "ice":
+            print("thing list")
+    
     elif rowone == "sib":
         for x in sibs:
-            print(x)
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
             list_thing.append(search_read)
+        if rowtwo == "grade":
+                print("thing list")
+
+        elif rowtwo == "pet":
+            sib_set = 0
+            for x in list_thing:
+                dog = 0
+                cat = 0
+                fish = 0
+                reptile = 0
+                for y in x:
+                    if y[0] == "dog":
+                        dog += 1
+                    elif y[0] == "cat":
+                        cat += 1
+                    elif y[0] == "fish":
+                        fish += 1
+                    elif y[0] == "reptile":
+                        reptile += 1
+                print(f"""
+Of all the students with {sibs[sib_set]} sibling(s):
+{dog} have dogs
+{cat} have cats
+{fish} have fish
+and {reptile} have reptiles""")
+                sib_set += 1
+        
+        elif rowtwo == "sib":
+            print("double")
+
+        elif rowtwo == "ice":
+            print("thing list")
+
     elif rowone == "ice":
         for x in ices:
-            print(x)
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
             list_thing.append(search_read)
+        if rowtwo == "grade":
+            print("thing list")
+        
+        elif rowtwo == "pet":
+            ice_set = 0
+            for x in list_thing:
+                dog = 0
+                cat = 0
+                fish = 0
+                reptile = 0
+                for y in x:
+                    if y[0] == "dog":
+                        dog += 1
+                    elif y[0] == "cat":
+                        cat += 1
+                    elif y[0] == "fish":
+                        fish += 1
+                    elif y[0] == "reptile":
+                        reptile += 1
+                print(f"""
+Of all the students who like {ices[ice_set]} ice cream:
+{dog} have dogs
+{cat} have cats
+{fish} have fish
+and {reptile} have reptiles""")
+                ice_set += 1
+
+        elif rowtwo == "sib":
+            print("thing list")
+
+        elif rowtwo == "ice":
+                print("double")
     
-    for x in list_thing:
-        print("")
-        print(x)
     # Add up like in basic data then say it the right way
 
     # figure out how to do below, and like display it afterwards
