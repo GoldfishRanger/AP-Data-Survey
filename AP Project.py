@@ -164,27 +164,38 @@ def compare_data():
     sibs = ["0","1","2","3","4"]
     ices = ["chocolate","vanilla","strawberry","mint"]
 
+    list_thing = []
+
     if rowone == "grade":
         for x in grades:
+            print(x)
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
-            print(search_read)
+            list_thing.append(search_read)
     elif rowone == "pet":
         for x in pets:
+            print(x)
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
-            print(search_read)
+            list_thing.append(search_read)
     elif rowone == "sib":
         for x in sibs:
+            print(x)
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
-            print(search_read)
+            list_thing.append(search_read)
     elif rowone == "ice":
         for x in ices:
+            print(x)
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
-            print(search_read)
+            list_thing.append(search_read)
     
+    for x in list_thing:
+        print("")
+        print(x)
+    # Add up like in basic data then say it the right way
+
     # figure out how to do below, and like display it afterwards
     # the first option of rowone compared to each option in rowtwo
 
