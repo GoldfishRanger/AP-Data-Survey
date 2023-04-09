@@ -165,6 +165,7 @@ def compare_data():
     ices = ["chocolate","vanilla","strawberry","mint"]
     list_thing = []
 
+# likes repeating the same thing, and whatever just run grade to pet and you'll see what im talking about
     def grade_comp(intro):
         fifth = 0
         sixth = 0
@@ -244,7 +245,7 @@ and {reptile} have a reptile""")
 {two} of them have 2 siblings
 {three} of them have 3 siblings
 and {four} of them have 4 siblings""")
-# Change all the repeat code to functions and make the category specific stuff an input *UUUGUGUHGHGHGH*
+
 
 # Grade
     if rowone == "grade":
