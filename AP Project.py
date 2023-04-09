@@ -170,9 +170,11 @@ def compare_data():
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
             list_thing.append(search_read)
+        
         if rowtwo == "grade":
             for x in list_thing:
-                print("double")
+                print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
+        
         elif rowtwo == "pet":
             grade_set = 0
             for x in list_thing:
@@ -196,9 +198,11 @@ Of all the students in {grades[grade_set]} grade:
 {fish} have fish
 and {reptile} have reptiles""")
                 grade_set += 1
+        
         elif rowtwo == "sib":
             for x in list_thing:
                 print("thing list")
+        
         elif rowtwo == "ice":
             for x in list_thing:
                 print("thing list")
@@ -208,11 +212,48 @@ and {reptile} have reptiles""")
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
             list_thing.append(search_read)
+        
         if rowtwo == "grade":
-            print("thing list")
+            pet_set = 0
+            for x in list_thing:
+                fifth = 0
+                sixth = 0
+                seventh = 0
+                eighth = 0
+                ninth = 0
+                tenth = 0
+                eleventh = 0
+                twelfth = 0
+                for y in x:
+                    if y[0] == "5th":
+                        fifth += 1
+                    elif y[0] == "6th":
+                        sixth += 1
+                    elif y[0] == "7th":
+                        seventh += 1
+                    elif y[0] == "8th":
+                        eighth +=1
+                    elif y[0] == "9th":
+                        ninth += 1
+                    elif y[0] == "10th":
+                        tenth += 1
+                    elif y[0] == "11th":
+                        eleventh += 1
+                    elif y[0] == "12th":
+                        twelfth += 1
+                    print(f"""Of all the students who have a {pets[pet_set]} as a pet
+{fifth} are in 5th grade
+{sixth} are in 6th grade
+{seventh} are in 7th grade
+{eighth} are in 8th grade
+{ninth} are in 9th grade
+{tenth} are in 10th grade
+{eleventh} are in 11th grade
+and {twelfth} are in 12th grade""")
+                    pet_set += 1
 
         elif rowtwo == "pet":
-            print("double")
+                print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
 
         elif rowtwo == "sib":
             print("thing list")
@@ -225,9 +266,46 @@ and {reptile} have reptiles""")
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
             list_thing.append(search_read)
+        
         if rowtwo == "grade":
-                print("thing list")
-
+            sib_set = 0
+            for x in list_thing:
+                fifth = 0
+                sixth = 0
+                seventh = 0
+                eighth = 0
+                ninth = 0
+                tenth = 0
+                eleventh = 0
+                twelfth = 0
+                for y in x:
+                    if y[0] == "5th":
+                        fifth += 1
+                    elif y[0] == "6th":
+                        sixth += 1
+                    elif y[0] == "7th":
+                        seventh += 1
+                    elif y[0] == "8th":
+                        eighth +=1
+                    elif y[0] == "9th":
+                        ninth += 1
+                    elif y[0] == "10th":
+                        tenth += 1
+                    elif y[0] == "11th":
+                        eleventh += 1
+                    elif y[0] == "12th":
+                        twelfth += 1
+                    print(f"""Of all the students with {sibs[sib_set]} sibling(s)
+{fifth} are in 5th grade
+{sixth} are in 6th grade
+{seventh} are in 7th grade
+{eighth} are in 8th grade
+{ninth} are in 9th grade
+{tenth} are in 10th grade
+{eleventh} are in 11th grade
+and {twelfth} are in 12th grade""")
+                    sib_set += 1
+        
         elif rowtwo == "pet":
             sib_set = 0
             for x in list_thing:
@@ -253,7 +331,7 @@ and {reptile} have reptiles""")
                 sib_set += 1
         
         elif rowtwo == "sib":
-            print("double")
+                print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
 
         elif rowtwo == "ice":
             print("thing list")
@@ -263,8 +341,45 @@ and {reptile} have reptiles""")
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
             search_read = sqlib.read_query(con,search_var)
             list_thing.append(search_read)
+        
         if rowtwo == "grade":
-            print("thing list")
+            ice_set = 0
+            for x in list_thing:
+                fifth = 0
+                sixth = 0
+                seventh = 0
+                eighth = 0
+                ninth = 0
+                tenth = 0
+                eleventh = 0
+                twelfth = 0
+                for y in x:
+                    if y[0] == "5th":
+                        fifth += 1
+                    elif y[0] == "6th":
+                        sixth += 1
+                    elif y[0] == "7th":
+                        seventh += 1
+                    elif y[0] == "8th":
+                        eighth +=1
+                    elif y[0] == "9th":
+                        ninth += 1
+                    elif y[0] == "10th":
+                        tenth += 1
+                    elif y[0] == "11th":
+                        eleventh += 1
+                    elif y[0] == "12th":
+                        twelfth += 1
+                    print(f"""Of all the students who like {ices[ice_set]} ice cream
+{fifth} are in 5th grade
+{sixth} are in 6th grade
+{seventh} are in 7th grade
+{eighth} are in 8th grade
+{ninth} are in 9th grade
+{tenth} are in 10th grade
+{eleventh} are in 11th grade
+and {twelfth} are in 12th grade""")
+                    ice_set += 1
         
         elif rowtwo == "pet":
             ice_set = 0
@@ -294,7 +409,7 @@ and {reptile} have reptiles""")
             print("thing list")
 
         elif rowtwo == "ice":
-                print("double")
+                print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
     
     # Add up like in basic data then say it the right way
 
