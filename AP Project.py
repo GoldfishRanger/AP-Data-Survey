@@ -165,6 +165,88 @@ def compare_data():
     ices = ["chocolate","vanilla","strawberry","mint"]
     list_thing = []
 
+    def grade_comp(intro):
+        fifth = 0
+        sixth = 0
+        seventh = 0
+        eighth = 0
+        ninth = 0
+        tenth = 0
+        eleventh = 0
+        twelfth = 0
+        for y in x:
+            if y[0] == "5th":
+                fifth += 1
+            elif y[0] == "6th":
+                sixth += 1
+            elif y[0] == "7th":
+                seventh += 1
+            elif y[0] == "8th":
+                eighth +=1
+            elif y[0] == "9th":
+                ninth += 1
+            elif y[0] == "10th":
+                tenth += 1
+            elif y[0] == "11th":
+                eleventh += 1
+            elif y[0] == "12th":
+                twelfth += 1
+            print(f"""{intro}
+{fifth} are in 5th grade
+{sixth} are in 6th grade
+{seventh} are in 7th grade
+{eighth} are in 8th grade
+{ninth} are in 9th grade
+{tenth} are in 10th grade
+{eleventh} are in 11th grade
+and {twelfth} are in 12th grade""")
+
+    def pet_comp(intro):
+            dog = 0
+            cat = 0
+            fish = 0
+            reptile = 0
+            for y in x:
+                if y[0] == "dog":
+                    dog += 1
+                elif y[0] == "cat":
+                    cat += 1
+                elif y[0] == "fish":
+                    fish += 1
+                elif y[0] == "reptile":
+                    reptile += 1
+                print(f"""{intro}
+{dog} have a dog
+{cat} have a cat
+{fish} have a fish
+and {reptile} have a reptile""")
+
+    def sib_comp(intro):
+        zero = 0
+        one = 0
+        two = 0
+        three = 0
+        four = 0
+        for y in x:
+            if y[0] == 0:
+                zero += 1
+            elif y[0] == 1:
+                one += 1
+            elif y[0] == 2:
+                two += 1
+            elif y[0] == 3:
+                three +=1 
+            elif y[0] == 4:
+                four += 1
+        print(f"""{intro}
+{zero} of them have 0 siblings
+{one} of them have 1 sibling
+{two} of them have 2 siblings
+{three} of them have 3 siblings
+and {four} of them have 4 siblings""")
+# Change all the repeat code to functions and make the category specific stuff an input *UUUGUGUHGHGHGH*
+
+# Grade
     if rowone == "grade":
         for x in grades:
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
@@ -178,58 +260,19 @@ def compare_data():
         elif rowtwo == "pet":
             grade_set = 0
             for x in list_thing:
-                dog = 0
-                cat = 0
-                fish = 0
-                reptile = 0
-                for y in x:
-                    if y[0] == "dog":
-                        dog += 1
-                    elif y[0] == "cat":
-                        cat += 1
-                    elif y[0] == "fish":
-                        fish += 1
-                    elif y[0] == "reptile":
-                        reptile += 1
-                print(f"""
-Of all the students in {grades[grade_set]} grade:
-{dog} have dogs
-{cat} have cats
-{fish} have fish
-and {reptile} have reptiles""")
-                grade_set += 1
+                pet_comp(f"Of all the students in {grades[grade_set]} grade:")
+                grade_set +=1
         
         elif rowtwo == "sib":
             grade_set = 0
             for x in list_thing:
-                zero = 0
-                one = 0
-                two = 0
-                three = 0
-                four = 0
-                for y in x:
-                    if y[0] == 0:
-                        zero += 1
-                    elif y[0] == 1:
-                        one += 1
-                    elif y[0] == 2:
-                        two += 1
-                    elif y[0] == 3:
-                        three +=1 
-                    elif y[0] == 4:
-                        four += 1
-                print(f"""Of all the students in {grades[grade_set]} grade:
-{zero} of them have 0 siblings
-{one} of them have 1 sibling
-{two} of them have 2 siblings
-{three} of them have 3 siblings
-and {four} of them have 4 siblings""")
+                sib_comp(f"Of all the students in {grades[grade_set]} grade:")
                 grade_set += 1
         
         elif rowtwo == "ice":
-            for x in list_thing:
-                print("thing list")
+            print("WiP")
 
+# Pet
     elif rowone == "pet":
         for x in pets:
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
@@ -239,75 +282,19 @@ and {four} of them have 4 siblings""")
         if rowtwo == "grade":
             pet_set = 0
             for x in list_thing:
-                fifth = 0
-                sixth = 0
-                seventh = 0
-                eighth = 0
-                ninth = 0
-                tenth = 0
-                eleventh = 0
-                twelfth = 0
-                for y in x:
-                    if y[0] == "5th":
-                        fifth += 1
-                    elif y[0] == "6th":
-                        sixth += 1
-                    elif y[0] == "7th":
-                        seventh += 1
-                    elif y[0] == "8th":
-                        eighth +=1
-                    elif y[0] == "9th":
-                        ninth += 1
-                    elif y[0] == "10th":
-                        tenth += 1
-                    elif y[0] == "11th":
-                        eleventh += 1
-                    elif y[0] == "12th":
-                        twelfth += 1
-                    print(f"""Of all the students who have a {pets[pet_set]} as a pet:
-{fifth} are in 5th grade
-{sixth} are in 6th grade
-{seventh} are in 7th grade
-{eighth} are in 8th grade
-{ninth} are in 9th grade
-{tenth} are in 10th grade
-{eleventh} are in 11th grade
-and {twelfth} are in 12th grade""")
-                    pet_set += 1
+                grade_comp(f"Of all the students who have a {pets[pet_set]} as a pet:")
+                pet_set +=1
 
         elif rowtwo == "pet":
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
 
         elif rowtwo == "sib":
-            pet_set = 0
-            for x in list_thing:
-                zero = 0
-                one = 0
-                two = 0
-                three = 0
-                four = 0
-                for y in x:
-                    if y[0] == 0:
-                        zero += 1
-                    elif y[0] == 1:
-                        one += 1
-                    elif y[0] == 2:
-                        two += 1
-                    elif y[0] == 3:
-                        three +=1 
-                    elif y[0] == 4:
-                        four += 1
-                print(f"""Of all the students have a {pets[pet_set]} as a pet:
-{zero} of them have 0 siblings
-{one} of them have 1 sibling
-{two} of them have 2 siblings
-{three} of them have 3 siblings
-and {four} of them have 4 siblings""")
-                pet_set += 1
+            print("WiP")
 
         elif rowtwo == "ice":
-            print("thing list")
-    
+            print("WiP")
+
+# Sib  
     elif rowone == "sib":
         for x in sibs:
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
@@ -317,72 +304,22 @@ and {four} of them have 4 siblings""")
         if rowtwo == "grade":
             sib_set = 0
             for x in list_thing:
-                fifth = 0
-                sixth = 0
-                seventh = 0
-                eighth = 0
-                ninth = 0
-                tenth = 0
-                eleventh = 0
-                twelfth = 0
-                for y in x:
-                    if y[0] == "5th":
-                        fifth += 1
-                    elif y[0] == "6th":
-                        sixth += 1
-                    elif y[0] == "7th":
-                        seventh += 1
-                    elif y[0] == "8th":
-                        eighth +=1
-                    elif y[0] == "9th":
-                        ninth += 1
-                    elif y[0] == "10th":
-                        tenth += 1
-                    elif y[0] == "11th":
-                        eleventh += 1
-                    elif y[0] == "12th":
-                        twelfth += 1
-                    print(f"""Of all the students with {sibs[sib_set]} sibling(s)
-{fifth} are in 5th grade
-{sixth} are in 6th grade
-{seventh} are in 7th grade
-{eighth} are in 8th grade
-{ninth} are in 9th grade
-{tenth} are in 10th grade
-{eleventh} are in 11th grade
-and {twelfth} are in 12th grade""")
-                    sib_set += 1
+                grade_comp(f"Of all the students with {sibs[sib_set]} sibling(s):")
+                sib_set +=1
         
         elif rowtwo == "pet":
             sib_set = 0
             for x in list_thing:
-                dog = 0
-                cat = 0
-                fish = 0
-                reptile = 0
-                for y in x:
-                    if y[0] == "dog":
-                        dog += 1
-                    elif y[0] == "cat":
-                        cat += 1
-                    elif y[0] == "fish":
-                        fish += 1
-                    elif y[0] == "reptile":
-                        reptile += 1
-                print(f"""
-Of all the students with {sibs[sib_set]} sibling(s):
-{dog} have dogs
-{cat} have cats
-{fish} have fish
-and {reptile} have reptiles""")
-                sib_set += 1
+                pet_comp(f"Of all the students with {sibs[sib_set]} sibling(s):")
+                sib_set +=1
         
         elif rowtwo == "sib":
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
 
         elif rowtwo == "ice":
-            print("thing list")
+            print("WiP")
 
+# Ice
     elif rowone == "ice":
         for x in ices:
             search_var = (f"""select {rowtwo} from annie_ap where {rowone}='{x}';""")
@@ -392,68 +329,17 @@ and {reptile} have reptiles""")
         if rowtwo == "grade":
             ice_set = 0
             for x in list_thing:
-                fifth = 0
-                sixth = 0
-                seventh = 0
-                eighth = 0
-                ninth = 0
-                tenth = 0
-                eleventh = 0
-                twelfth = 0
-                for y in x:
-                    if y[0] == "5th":
-                        fifth += 1
-                    elif y[0] == "6th":
-                        sixth += 1
-                    elif y[0] == "7th":
-                        seventh += 1
-                    elif y[0] == "8th":
-                        eighth +=1
-                    elif y[0] == "9th":
-                        ninth += 1
-                    elif y[0] == "10th":
-                        tenth += 1
-                    elif y[0] == "11th":
-                        eleventh += 1
-                    elif y[0] == "12th":
-                        twelfth += 1
-                    print(f"""Of all the students who like {ices[ice_set]} ice cream
-{fifth} are in 5th grade
-{sixth} are in 6th grade
-{seventh} are in 7th grade
-{eighth} are in 8th grade
-{ninth} are in 9th grade
-{tenth} are in 10th grade
-{eleventh} are in 11th grade
-and {twelfth} are in 12th grade""")
-                    ice_set += 1
+                grade_comp(f"Of all the students who like {ices[ice_set]} ice cream:")
+                ice_set +=1
         
         elif rowtwo == "pet":
             ice_set = 0
             for x in list_thing:
-                dog = 0
-                cat = 0
-                fish = 0
-                reptile = 0
-                for y in x:
-                    if y[0] == "dog":
-                        dog += 1
-                    elif y[0] == "cat":
-                        cat += 1
-                    elif y[0] == "fish":
-                        fish += 1
-                    elif y[0] == "reptile":
-                        reptile += 1
-                print(f"""
-Of all the students who like {ices[ice_set]} ice cream:
-{dog} have dogs
-{cat} have cats
-{fish} have fish
-and {reptile} have reptiles""")
-                ice_set += 1
+                pet_comp(f"Of all the students who like {ices[ice_set]} ice cream:")
+                ice_set +=1
 
         elif rowtwo == "sib":
-            print("thing list")
+            print("WiP")
 
         elif rowtwo == "ice":
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
