@@ -200,8 +200,31 @@ and {reptile} have reptiles""")
                 grade_set += 1
         
         elif rowtwo == "sib":
+            grade_set = 0
             for x in list_thing:
-                print("thing list")
+                zero = 0
+                one = 0
+                two = 0
+                three = 0
+                four = 0
+                for y in x:
+                    if y[0] == 0:
+                        zero += 1
+                    elif y[0] == 1:
+                        one += 1
+                    elif y[0] == 2:
+                        two += 1
+                    elif y[0] == 3:
+                        three +=1 
+                    elif y[0] == 4:
+                        four += 1
+                print(f"""Of all the students in {grades[grade_set]} grade:
+{zero} of them have 0 siblings
+{one} of them have 1 sibling
+{two} of them have 2 siblings
+{three} of them have 3 siblings
+and {four} of them have 4 siblings""")
+                grade_set += 1
         
         elif rowtwo == "ice":
             for x in list_thing:
@@ -241,7 +264,7 @@ and {reptile} have reptiles""")
                         eleventh += 1
                     elif y[0] == "12th":
                         twelfth += 1
-                    print(f"""Of all the students who have a {pets[pet_set]} as a pet
+                    print(f"""Of all the students who have a {pets[pet_set]} as a pet:
 {fifth} are in 5th grade
 {sixth} are in 6th grade
 {seventh} are in 7th grade
@@ -256,7 +279,31 @@ and {twelfth} are in 12th grade""")
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
 
         elif rowtwo == "sib":
-            print("thing list")
+            pet_set = 0
+            for x in list_thing:
+                zero = 0
+                one = 0
+                two = 0
+                three = 0
+                four = 0
+                for y in x:
+                    if y[0] == 0:
+                        zero += 1
+                    elif y[0] == 1:
+                        one += 1
+                    elif y[0] == 2:
+                        two += 1
+                    elif y[0] == 3:
+                        three +=1 
+                    elif y[0] == 4:
+                        four += 1
+                print(f"""Of all the students have a {pets[pet_set]} as a pet:
+{zero} of them have 0 siblings
+{one} of them have 1 sibling
+{two} of them have 2 siblings
+{three} of them have 3 siblings
+and {four} of them have 4 siblings""")
+                pet_set += 1
 
         elif rowtwo == "ice":
             print("thing list")
