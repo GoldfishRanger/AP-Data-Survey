@@ -136,6 +136,7 @@ def compare_data():
     print("-----------------------------------------------------------------------------------------------------------------------------------")
 
     cats = input("Please enter the coresponding numbers of the 2 catagories you would like to compare separated by a space: ")
+    print("")
     cats = list(map(int,cats.strip().split()))
     catone = cats[0]
     cattwo = cats[1]
@@ -192,7 +193,7 @@ def compare_data():
                 eleventh += 1
             elif y[0] == "12th":
                 twelfth += 1
-            print(f"""{intro}
+        print(f"""{intro}
 {fifth} are in 5th grade
 {sixth} are in 6th grade
 {seventh} are in 7th grade
@@ -200,7 +201,8 @@ def compare_data():
 {ninth} are in 9th grade
 {tenth} are in 10th grade
 {eleventh} are in 11th grade
-and {twelfth} are in 12th grade""")
+and {twelfth} are in 12th grade
+""")
 
     def pet_comp(intro):
             dog = 0
@@ -216,11 +218,12 @@ and {twelfth} are in 12th grade""")
                     fish += 1
                 elif y[0] == "reptile":
                     reptile += 1
-                print(f"""{intro}
+            print(f"""{intro}
 {dog} have a dog
 {cat} have a cat
 {fish} have a fish
-and {reptile} have a reptile""")
+and {reptile} have a reptile
+""")
 
     def sib_comp(intro):
         zero = 0
@@ -244,8 +247,29 @@ and {reptile} have a reptile""")
 {one} of them have 1 sibling
 {two} of them have 2 siblings
 {three} of them have 3 siblings
-and {four} of them have 4 siblings""")
+and {four} of them have 4 siblings
+""")
 
+    def ice_comp(intro):
+        cho = 0
+        van = 0
+        straw = 0
+        mint = 0
+        for x in search_read:
+            if x[0] == "chocolate":
+                cho += 1
+            elif x[0] == "vanilla":
+                van += 1
+            elif x[0] == "strawberry":
+                straw += 1
+            elif x[0] == "mint":
+                mint += 1
+        print(f"""{intro}
+{cho} like chocolate ice cream
+{van} like vanilla ice cream
+{straw} like strawberry ice cream
+{mint} like mint ice cream
+""")
 
 # Grade
     if rowone == "grade":
@@ -255,7 +279,6 @@ and {four} of them have 4 siblings""")
             list_thing.append(search_read)
         
         if rowtwo == "grade":
-            for x in list_thing:
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
         
         elif rowtwo == "pet":
@@ -271,7 +294,10 @@ and {four} of them have 4 siblings""")
                 grade_set += 1
         
         elif rowtwo == "ice":
-            print("WiP")
+            grade_set = 0
+            for x in list_thing:
+                ice_comp(f"Of all the students in {grades[grade_set]} grade:")
+                grade_set += 1
 
 # Pet
     elif rowone == "pet":
@@ -290,10 +316,16 @@ and {four} of them have 4 siblings""")
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
 
         elif rowtwo == "sib":
-            print("WiP")
+            pet_set = 0
+            for x in list_thing:
+                sib_comp(f"Of all the students who have a {pets[pet_set]} as a pet:")
+                pet_set +=1
 
         elif rowtwo == "ice":
-            print("WiP")
+            pet_set = 0
+            for x in list_thing:
+                ice_comp(f"Of all the students who have a {pets[pet_set]} as a pet:")
+                pet_set +=1
 
 # Sib  
     elif rowone == "sib":
@@ -318,7 +350,10 @@ and {four} of them have 4 siblings""")
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
 
         elif rowtwo == "ice":
-            print("WiP")
+            sib_set = 0
+            for x in list_thing:
+                ice_comp(f"Of all the students with {sibs[sib_set]} sibling(s):")
+                sib_set +=1
 
 # Ice
     elif rowone == "ice":
@@ -340,174 +375,15 @@ and {four} of them have 4 siblings""")
                 ice_set +=1
 
         elif rowtwo == "sib":
-            print("WiP")
+            ice_set = 0
+            for x in list_thing:
+                sib_comp(f"Of all the students who like {ices[ice_set]} ice cream:")
+                ice_set +=1
 
         elif rowtwo == "ice":
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
     
-    # Add up like in basic data then say it the right way
-
-    # figure out how to do below, and like display it afterwards
-    # the first option of rowone compared to each option in rowtwo
-
-    # if rowone == "grade":
-    #     fifth = 0
-    #     sixth = 0
-    #     seventh = 0
-    #     eighth = 0
-    #     ninth = 0
-    #     tenth = 0
-    #     eleventh = 0
-    #     twelfth = 0
-    #     for x in search_read_one:
-    #         if x[0] == "5th":
-    #             fifth += 1
-    #         elif x[0] == "6th":
-    #             sixth += 1
-    #         elif x[0] == "7th":
-    #             seventh += 1
-    #         elif x[0] == "8th":
-    #             eighth +=1
-    #         elif x[0] == "9th":
-    #             ninth += 1
-    #         elif x[0] == "10th":
-    #             tenth += 1
-    #         elif x[0] == "11th":
-    #             eleventh += 1
-    #         elif x[0] == "12th":
-    #             twelfth += 1
-    #     rowone_list = [fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth]
-    # elif rowone == "pet":
-    #     dog = 0
-    #     cat = 0
-    #     fish = 0
-    #     reptile = 0
-    #     for x in search_read_one:
-    #         if x[0] == "dog":
-    #             dog += 1
-    #         elif x[0] == "cat":
-    #             cat += 1
-    #         elif x[0] == "fish":
-    #             fish += 1
-    #         elif x[0] == "reptile":
-    #             reptile += 1
-    #     rowone_list = [dog,cat,fish,reptile]
-    # elif rowone == "sib":
-    #     zero = 0
-    #     one = 0
-    #     two = 0
-    #     three = 0
-    #     four = 0
-    #     for x in search_read_one:
-    #         if x[0] == 0:
-    #             zero += 1
-    #         elif x[0] == 1:
-    #             one += 1
-    #         elif x[0] == 2:
-    #             two += 1
-    #         elif x[0] == 3:
-    #             three +=1 
-    #         elif x[0] == 4:
-    #             four += 1
-    #     rowone_list = [zero,one,two,three,four]
-    # elif rowone == "ice":
-    #     cho = 0
-    #     van = 0
-    #     straw = 0
-    #     mint = 0
-    #     for x in search_read_one:
-    #         if x[0] == "chocolate":
-    #             cho += 1
-    #         elif x[0] == "vanilla":
-    #             van += 1
-    #         elif x[0] == "strawberry":
-    #             straw += 1
-    #         elif x[0] == "mint":
-    #             mint += 1
-    #     rowone_list = [cho,van,straw,mint]
-
-    # if rowtwo == "grade":
-    #     fifth = 0
-    #     sixth = 0
-    #     seventh = 0
-    #     eighth = 0
-    #     ninth = 0
-    #     tenth = 0
-    #     eleventh = 0
-    #     twelfth = 0
-    #     for x in search_read_two:
-    #         if x[0] == "5th":
-    #             fifth += 1
-    #         elif x[0] == "6th":
-    #             sixth += 1
-    #         elif x[0] == "7th":
-    #             seventh += 1
-    #         elif x[0] == "8th":
-    #             eighth +=1
-    #         elif x[0] == "9th":
-    #             ninth += 1
-    #         elif x[0] == "10th":
-    #             tenth += 1
-    #         elif x[0] == "11th":
-    #             eleventh += 1
-    #         elif x[0] == "12th":
-    #             twelfth += 1
-    #     rowtwo_list = [fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth]
-    # elif rowtwo == "pet":
-    #     dog = 0
-    #     cat = 0
-    #     fish = 0
-    #     reptile = 0
-    #     for x in search_read_two:
-    #         if x[0] == "dog":
-    #             dog += 1
-    #         elif x[0] == "cat":
-    #             cat += 1
-    #         elif x[0] == "fish":
-    #             fish += 1
-    #         elif x[0] == "reptile":
-    #             reptile += 1
-    #     rowtwo_list = [dog,cat,fish,reptile]
-    # elif rowtwo == "sib":
-    #     zero = 0
-    #     one = 0
-    #     two = 0
-    #     three = 0
-    #     four = 0
-    #     for x in search_read_two:
-    #         if x[0] == 0:
-    #             zero += 1
-    #         elif x[0] == 1:
-    #             one += 1
-    #         elif x[0] == 2:
-    #             two += 1
-    #         elif x[0] == 3:
-    #             three +=1 
-    #         elif x[0] == 4:
-    #             four += 1
-    #     rowtwo_list = [zero,one,two,three,four]
-    # elif rowtwo == "ice":
-    #     cho = 0
-    #     van = 0
-    #     straw = 0
-    #     mint = 0
-    #     for x in search_read_two:
-    #         if x[0] == "chocolate":
-    #             cho += 1
-    #         elif x[0] == "vanilla":
-    #             van += 1
-    #         elif x[0] == "strawberry":
-    #             straw += 1
-    #         elif x[0] == "mint":
-    #             mint += 1
-    #     rowtwo_list = [cho,van,straw,mint]
-
-    # number = 0
-    # for x in rowone_list:
-    #     number += x
-    # print(number)
-
-    # make sure its just two, get data, display good
+# make sure its just two, get data, display good
 
 # Graph data
 def graph_data():
