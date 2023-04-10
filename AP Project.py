@@ -166,7 +166,6 @@ def compare_data():
     ices = ["chocolate","vanilla","strawberry","mint"]
     list_thing = []
 
-# likes repeating the same thing, and whatever just run grade to pet and you'll see what im talking about
     def grade_comp(intro):
         fifth = 0
         sixth = 0
@@ -382,8 +381,6 @@ and {four} of them have 4 siblings
 
         elif rowtwo == "ice":
                 print("You inputted the number for grade twice. Comparison only works if the two things your comparing are different.")
-    
-# make sure its just two, get data, display good
 
 # Graph data
 def graph_data():
@@ -409,7 +406,6 @@ print("""There are 3 ways in which you can choose to display the data:
       
 choice = int(input("Enter the coresponding number of the method you would like to use: "))
 
-# try:
 if choice == 1:
     basic_data()
 elif choice == 2:
@@ -417,6 +413,4 @@ elif choice == 2:
 elif choice == 3:
     graph_data()
 else:
-    print("something went wrong")
-# except:
-#     print("something went wrong")
+    print("That was not an option.")
