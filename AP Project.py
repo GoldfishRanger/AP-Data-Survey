@@ -166,6 +166,8 @@ def compare_data():
     ices = ["chocolate","vanilla","strawberry","mint"]
     list_thing = []
 
+# The Code that is doing the comparing
+# Have to return stuff
     def grade_comp(intro):
         fifth = 0
         sixth = 0
@@ -396,7 +398,7 @@ def graph_data():
     # make sure its just one, get data, display good
 
 # End of graph_data func
-# ITS OK TO LOOK UP HOW TF TO DO THIS
+# ITS OK TO LOOK UP HOW TF TO DO THIS ^
 print("This code uses randomly generated data.")
 print("-----------------------------------------------------------------------------------------------------------------------------------")
 print("""There are 3 ways in which you can choose to display the data:
