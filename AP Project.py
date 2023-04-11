@@ -1,5 +1,6 @@
 import sqlib
 con = sqlib.create_db_connection("127.0.0.1","alischer","alischer1","in_class_demo")
+import matplotlib.pyplot as plt
 
 # Gets All Possible Answers From Catagory and Gives How Many People Chose What
 def basic_data():
@@ -395,10 +396,103 @@ def graph_data():
     print("-----------------------------------------------------------------------------------------------------------------------------------")
 
     cats = input("Please enter the coresponding number of the catagory you would like to graph separated by a space: ")
-    # make sure its just one, get data, display good
-
+# Grade
+    if cats == "1":
+        search_var = """select grade from annie_ap;"""
+        search_read = sqlib.read_query(con,search_var)
+        fifth = 0
+        sixth = 0
+        seventh = 0
+        eighth = 0
+        ninth = 0
+        tenth = 0
+        eleventh = 0
+        twelfth = 0
+        for x in search_read:
+            if x[0] == "5th":
+                fifth += 1
+            elif x[0] == "6th":
+                sixth += 1
+            elif x[0] == "7th":
+                seventh += 1
+            elif x[0] == "8th":
+                eighth +=1
+            elif x[0] == "9th":
+                ninth += 1
+            elif x[0] == "10th":
+                tenth += 1
+            elif x[0] == "11th":
+                eleventh += 1
+            elif x[0] == "12th":
+                twelfth += 1
+        info = [fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelfth]
+        plt.pie(info)
+        # save or something
+# Pet
+    elif cats == "2":
+        search_var = """select pet from annie_ap;"""
+        search_read = sqlib.read_query(con,search_var)
+        dog = 0
+        cat = 0
+        fish = 0
+        reptile = 0
+        for x in search_read:
+            if x[0] == "dog":
+                dog += 1
+            elif x[0] == "cat":
+                cat += 1
+            elif x[0] == "fish":
+                fish += 1
+            elif x[0] == "reptile":
+                reptile += 1
+        info = [dog, cat, fish, reptile]
+        plt.pie(info)
+        # save or something
+# Sib
+    elif cats == "3":
+        search_var = """select sib from annie_ap;"""
+        search_read = sqlib.read_query(con,search_var)
+        zero = 0
+        one = 0
+        two = 0
+        three = 0
+        four = 0
+        for x in search_read:
+            if x[0] == 0:
+                zero += 1
+            elif x[0] == 1:
+                one += 1
+            elif x[0] == 2:
+                two += 1
+            elif x[0] == 3:
+                three +=1 
+            elif x[0] == 4:
+                four += 1
+        info = [zero,one,two,three,four]
+        plt.pie(info)
+        # save or something
+# Ice
+    elif cats == "4":
+        search_var = """select ice from annie_ap;"""
+        search_read = sqlib.read_query(con,search_var)
+        cho = 0
+        van = 0
+        straw = 0
+        mint = 0
+        for x in search_read:
+            if x[0] == "chocolate":
+                cho += 1
+            elif x[0] == "vanilla":
+                van += 1
+            elif x[0] == "strawberry":
+                straw += 1
+            elif x[0] == "mint":
+                mint += 1
+        info = [cho,van,straw,mint]
+        plt.pie(info)
+        # save or something
 # End of graph_data func
-# ITS OK TO LOOK UP HOW TF TO DO THIS ^
+
 print("This code uses randomly generated data.")
 print("-----------------------------------------------------------------------------------------------------------------------------------")
 print("""There are 3 ways in which you can choose to display the data:
