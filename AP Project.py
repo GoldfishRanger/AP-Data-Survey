@@ -16,7 +16,7 @@ def basic_data():
     cats = input("Please enter the coresponding number to the category you would like to learn more about: ")
     print("-----------------------------------------------------------------------------------------------------------------------------------")
 
-# grade
+# Calculates and displays the data for Grade
     if cats == "1":
         search_var = """select grade from annie_ap;"""
         search_read = sqlib.read_query(con,search_var)
@@ -57,7 +57,7 @@ Out of all {number} students
 {eleventh} are in 11th grade
 and {twelfth} are in 12th
 """)
-# pet
+# Calculates and displays the data for Pet
     if cats == "2":
         search_var = """select pet from annie_ap;"""
         search_read = sqlib.read_query(con,search_var)
@@ -82,7 +82,7 @@ Out of all {number} students
 {fish} own fish
 and {reptile} own reptiles
 """)
-# sib  
+# Calculates and displays the data for Sibling
     if cats == "3":
         search_var = """select sib from annie_ap;"""
         search_read = sqlib.read_query(con,search_var)
@@ -111,7 +111,7 @@ Out of all {number} students
 {three} have three siblings
 {four} have four siblings
 """)
-# ice
+# Calculates and displays the data for Ice Cream
     if cats == "4":
         search_var = """select ice from annie_ap;"""
         search_read = sqlib.read_query(con,search_var)
@@ -419,7 +419,7 @@ def graph_data():
     print("-----------------------------------------------------------------------------------------------------------------------------------")
 
     cats = input("Please enter the coresponding number of the catagory you would like to graph separated by a space: ")
-# Grade
+# Calculates and displays the data for Grade
     if cats == "1":
         search_var = """select grade from annie_ap;"""
         search_read = sqlib.read_query(con,search_var)
@@ -457,7 +457,7 @@ def graph_data():
         plt.xticks(y_pos,label)
         plt.savefig("Grade_Graph.png")
         print("The PNG of the graph should be with your files.")
-# Pet
+# Calculates and displays the data for Pet
     elif cats == "2":
         search_var = """select pet from annie_ap;"""
         search_read = sqlib.read_query(con,search_var)
@@ -483,7 +483,7 @@ def graph_data():
         plt.xticks(y_pos,label)
         plt.savefig("Pet_Graph.png")
         print("The PNG of the graph should be with your files.")
-# Sib
+# Calculates and displays the data for Sibling
     elif cats == "3":
         search_var = """select sib from annie_ap;"""
         search_read = sqlib.read_query(con,search_var)
@@ -512,7 +512,7 @@ def graph_data():
         plt.xticks(y_pos,label)
         plt.savefig("Sibling_Graph.png")
         print("The PNG of the graph should be with your files.")
-# Ice
+# Calculates and displays the data for Ice Cream
     elif cats == "4":
         search_var = """select ice from annie_ap;"""
         search_read = sqlib.read_query(con,search_var)
@@ -549,6 +549,7 @@ print("""There are 3 ways in which you can choose to display the data:
 
 choice = input("Enter the coresponding number of the method you would like to use: ")
 
+# How you choose the way you want it to be displayed
 try:
     if choice == "1":
         print(basic_data())
