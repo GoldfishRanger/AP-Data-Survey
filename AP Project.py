@@ -1,3 +1,4 @@
+# Importing and connecting to outside librabries
 import sqlib
 con = sqlib.create_db_connection("127.0.0.1","alischer","alischer1","in_class_demo")
 import numpy as np
@@ -136,9 +137,6 @@ Out of all {number} students
 {straw} like strawberry ice cream
 {mint} like mint ice cream
 """)
-
-   
-        print("I'm sorry but that was not an option")
 
 # To compare data from two different categories
 def compare_data():
